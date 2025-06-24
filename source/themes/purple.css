@@ -1,0 +1,46 @@
+:root {
+    --title-color: #a6b3c7;
+    --credits-color: #574588;
+
+    /* Base colors */
+    --background-color: #1f1930;
+    --content-background-color: #171424;
+    --text-color: #d1abdd;
+
+    /* Header colors */
+    /* Colors for: h1 | h2 | h3 respectively*/
+    --header-color: #b941ff;
+    --chapter-color: #b163c0;
+    --sub-chapter-color: #815297;
+
+    /* Navbar */
+    --nav-border-color: #3d2449;
+    --nav-background: #1f1930;
+    --nav-unselected: #564079;
+    --nav-selected: #db26ff;
+
+    /* Widgets */
+    --widget-title-color: #ffffff;
+    --warning-header-background-color: #ff972057;
+    --warning-text-color: #dddddd;
+    --warning-border-color: #f39932;
+    --note-header-background-color: #008cff52;
+    --note-text-color: #dddddd;
+    --note-border-color: #33a3ff;
+    --important-header-background-color: #ff222265;
+    --important-text-color: #dddddd;
+    --important-border-color: #cc1e1e;
+
+    /* Code block */
+    --code-header-color: #df8dff;
+    --code-border-color: #3a233d;
+    --code-text-color: #f1daf1;
+    --code-background-color: #0e0414bd;
+    
+    /* list */
+    --list-bullet-color: #ff30ee;
+}
+
+#crowdocs_content {
+    border-color:#3d2449 !important;
+}

@@ -1,0 +1,42 @@
+:root {
+    --title-color: #00ff4c;
+    --credits-color: #074e00;
+
+    /* Base colors */
+    --background-color: #111111;
+    --content-background-color: #000000;
+    --text-color: #00ff00;
+
+    /* Header colors */
+    /* Colors for: h1 | h2 | h3 respectively*/
+    --header-color: #15ff00;
+    --chapter-color: #00bd39;
+    --sub-chapter-color: #008111;
+
+    /* Navbar */
+    --nav-border-color: #00ff22;
+    --nav-background: #141414;
+    --nav-unselected: #868686;
+    --nav-selected: #00ff15;
+
+    /* Widgets */
+    --widget-title-color: #00ff40;
+    --warning-header-background-color: #00ff153b;
+    --warning-text-color: #00ff15;
+    --warning-border-color: #00ff22;
+    --note-header-background-color: #00ff153b;
+    --note-text-color: #00ff15;
+    --note-border-color: #00ff22;
+    --important-header-background-color: #00ff153b;
+    --important-text-color: #00ff15;
+    --important-border-color: #00ff22;
+
+    /* Code block */
+    --code-header-color: #00ff4c;
+    --code-border-color: #08200f;
+    --code-text-color: #00ff22;
+    --code-background-color: #000000bd;
+    
+    /* list */
+    --list-bullet-color: #00ff15;
+}
