@@ -1,5 +1,6 @@
 const content = document.getElementById("crowdocs_content");
 const navbar = document.getElementById("crowdocs_navbar");
+const nav_content = document.getElementById("nav_content");
 const include_bar = document.getElementById("crowdocs_include_bar");
 
 let first_target = document.getElementById("n_1");
@@ -7,7 +8,7 @@ let opened = null;
 let selected = [];
 let display = {
     "content":null,
-    "navbar":navbar,
+    "navbar":nav_content,
     "include_bar":null,
 };
 let simclick = false;

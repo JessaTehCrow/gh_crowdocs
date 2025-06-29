@@ -261,10 +261,10 @@ vvv title [state]
 ^^^
 ```
 
-`vvv title [state]` is the opening
-`title` HAS to be set, `state` does not.
-
+`vvv title [state]` is the opening statement
+`title` HAS to be set, `state` does not
 `state` can be either `open` or `closed`
+`^^^` is the close statement.
 
 everything in the content will be parsed like normal. Meaning that you can technically have nested dropdowns.
 
