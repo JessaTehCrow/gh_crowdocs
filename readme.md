@@ -36,6 +36,7 @@ It houses features such as:
     - [Lists](#lists)
     - [Widgets](#widgets)
     - [Code](#code)
+    - [Dropdowns](#dropdowns)
     - [Extra](#extra)
 - [Planned for future](#planned-for-future)
 
@@ -251,20 +252,41 @@ content
 ```
 ~~~
 
+#### Dropdowns
+
+```
+vvv title [state]
+[content]
+^^^
+```
+
+`vvv title [state]` is the opening
+`title` HAS to be set, `state` does not.
+
+`state` can be either `open` or `closed`
+
+everything in the content will be parsed like normal. Meaning that you can technically have nested dropdowns.
+
+Examples:
+```
+vvv Example open
+this dropdown is open by default
+^^^
+
+vvv Example2 closed
+This drop down is closed by default
+^^^
+
+vvv Example3
+This drop down is also closed by default
+^^^
+```
+
 #### Extra
 
 If there is any piece of html that this doesn't use, you can use raw html tags within and it'll get parsed as html. Beware, this has a high chance to lead to bugs.
 
-Example for a dropdown:
-
-```html
-<details>
-<summary>See content</summary>
-
-!!! Unfolded
-    The dropdown has been unfolded!
-</details>
-```
+for example
 
 This example has a working dropdown that shows the important widget when opened.
 
@@ -275,4 +297,3 @@ ___
 - Markdown operators
 - Linking to other headers/pages
 - Previous/Next buttons at the bottom of the page
-- Functioning scroll wheel

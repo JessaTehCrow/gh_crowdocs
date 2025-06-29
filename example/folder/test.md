@@ -1,6 +1,6 @@
 # test
 
-A really long file with multiple headers to test navigation.
+A really long file with multiple <code>headers</code> to test navigation.
 
 ## header 1
 
@@ -31,11 +31,3 @@ A really long file with multiple headers to test navigation.
 ## header 6
 
 ### subheader 6.1
-
-## header 7
-
-### subheader 7.1
-
-### subheader 7.2
-
-### subheader 7.3

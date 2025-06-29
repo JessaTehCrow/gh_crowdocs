@@ -130,6 +130,45 @@ def array(line:str, content:List[str], offset:int):
     }
 
 
+@handlers.append
+def dropdown(line:str, content:List[str], offset:int):
+    if not line.startswith("vvv") and not line.startswith("^^^"): return
+    fmt = "</div>"
+    drop_type = "close"
+
+    if line.startswith("vvv"):
+        drop_type = "open"
+        dropdown_id = register("dropdown")
+        title = line[4:].strip().split(" ")
+        content_classlist = "dropdown hidden"
+        button_classlist = "dropdown_close"
+
+        # Dropdown needs title, so check if it's empty
+        if title == []: 
+            print(f"\x1b[31mNo title for dropown at line {offset+1}. Ignoring dropdown\x1b[0m")
+            return
+
+        # Check if default should be open or closed, and remove data from title if so
+        if title[-1] == "open" or title[-1] == "closed":
+            status = title.pop()
+            # remove "closed" but only actually handle things for open
+            if status == "open":
+                content_classlist = "dropdown"
+                button_classlist = "dropdown_open"
+
+        title = " ".join(title)
+        fmt = f'<p class="{button_classlist}" id="db_{dropdown_id}">{title}</p><div class="{content_classlist}" id="d_{dropdown_id}">'
+
+    # Register dropdown type count, so we can check if they were closed properly later
+    register("dropdown_" +drop_type)
+
+    return {
+        "type":"dropdown",
+        "dropdown-type": drop_type,
+        "format":fmt,
+        "offset":offset+1
+    }
+
 
 def get_parsed(line:str, content:List[str], offset:int):
     for h in handlers:
@@ -140,7 +179,7 @@ def get_parsed(line:str, content:List[str], offset:int):
 
 def parse_data(data, depth=0):
     if depth > 1:
-        raise RecursionError("Crowdocs has a maximum depth of 1 folder")
+        raise RecursionError("\x1b[31mCrowdocs has a maximum depth of 1 folder\x1b[0m")
 
     pages = []
     for x in data:
@@ -176,6 +215,7 @@ def parse_data(data, depth=0):
             if parsed != None and parargaph["content"] != []:
                 parargaph["format"] = "<p>" + " ".join(parargaph["content"]) + "</p>"
                 page["content"].append(parargaph)
+                # reset paragraph for next one
                 parargaph = {
                     "type":"paragraph",
                     "content":[],
@@ -200,6 +240,16 @@ def parse_data(data, depth=0):
             parargaph["format"] = "<p>"+" ".join(parargaph["content"])+"</p>"
             page["content"].append(parargaph)
         
+        # Check if all dropdowns are closed
+        if "dropdown" in registered:
+            closed = 0
+            opened = registered["dropdown_open"]
+            if "dropdown_close" in registered: 
+                closed = registered["dropdown_close"]
+
+            if closed != opened:
+                raise SyntaxError("\x1b[31mDropdown never closed\x1b[0m")
+
         pages.append(page)
-    
+
     return pages

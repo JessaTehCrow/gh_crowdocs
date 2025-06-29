@@ -1,18 +1,44 @@
 .page {
     padding-bottom: 25px;
 }
-#crowdocs_content details {
-    font-size: 20px; 
-    text-align: left;
-    left:0px;
+code {
+    background-color: var(--code-background-color);
+    color:var(--code-text-color);
+    padding: 0px 4px 0px 4px;
 }
-#crowdocs_content summary {
-    display: block;
-    font-size: 20px;
-    text-align: left;
+.dropdown {
+    width: 96%;
+    margin-left: 4%;
+    background-color: #00000010;
+    padding: 5px;
 }
-#crowdocs_content summary::before {
+.dropdown_close {
+    line-height: 2em;
+    color:var(--text-color);
+    font-weight: bold;
+}
+.dropdown_close:hover {
+    color:var(--header-color)
+}
+.dropdown_close::before {
     content: "> ";
+    color:var(--text-color);
+}
+.dropdown_open {
+    display: block;
+    padding-top: 20px;
+    color:var(--header-color);
+    font-weight: bold;
+    border-color: var(--nav-border-color);
+    border-width: 0px 0px 2px 0px;
+}
+.dropdown_open:hover {
+    color:var(--text-color);
+}
+.dropdown_open::before {
+    content: "v ";
+    font-weight: normal;
+    color: var(--text-color);
 }
 summary:hover {
     color: var(--nav-selected);
@@ -186,6 +212,10 @@ body {
     color:var(--header-color);
 }
 #crowdocs_content h2 {
+    display: block;
+    margin: 0 0 -5px 0;
+    padding-top:1.2em;
+    line-height: 0em;
     color:var(--chapter-color);
 }
 #crowdocs_content h3 {

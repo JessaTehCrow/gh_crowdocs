@@ -25,7 +25,7 @@ def get_config(file) -> dict:
 
 def get_docs(path, depth=0):
     if depth > 1:
-        raise RecursionError("Exceeded max folder depth of 1")
+        raise RecursionError("\x1b[31mExceeded max folder depth of 1\x1b[0m")
 
     raw_files:list = os.listdir(path)
     result = []
