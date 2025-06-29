@@ -10,6 +10,7 @@ It houses features such as:
 - Code blocks
 - Reactive UI
 - Lists
+- Functioning scroll wheel
 
 
 **Table of contents**
